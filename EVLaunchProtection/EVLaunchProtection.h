@@ -1,12 +1,11 @@
-# EVLaunchProtection
-一款App启动保护组件，防止App启动时连续崩溃。
-- 内部原理: 设置一个App生存时间，如果App启动后，运行时间超过该时间，则认为启动正常；反之，则认为启动过程中，发生了崩溃错误；当崩溃次数超过设置的阈值时，执行浅度修复策略，具体策略行为，由用户
-自定义，当浅度修复策略 无法修复崩溃问题时，执行深度修复策略；同理，当深度修复策略无效时，最后执行热修复策略。 [一般策略行为主要包括：删除各种缓存，包括三方框架缓存，删除本地数据库，删除本地持久化数据，删除用户信息，删除热修复包(崩溃也可能是应用了热修复包引起的)，将本地所有相关资源恢复到初试状态等。]
-- 适用场景: 防止App启动连续崩溃，当监测到崩溃时，进行自我修复；
-## Install with cocoapods
-pod 'EVLaunchProtection', '~> 0.0.1'
-## API
-```
+//
+//  EVLaunchProtection.h
+//  EVLaunchProtectionDemo
+//
+//  Created by Ever on 2019/4/9.
+//  Copyright © 2019 Ever. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -40,12 +39,12 @@ typedef void(^EVLaunchProtectionLogBlock)(EVLaunchProtectionState state);
 @property (nonatomic, assign) NSUInteger minAppLiveThreshold;
 
 /**
- 启动crash阈值；如果启动crash >= 该值，则执行浅度修复策略：shallowRepairBlock。默认：2.
+ 启动crash阈值；如果启动crash >= 该值，则执行浅度修复策略：shallowRepairBlock。
  */
 @property (nonatomic, assign) NSUInteger thresholdToShallowRepairWhenContinuousCrashOnLaunch;
 
 /**
- 启动crash阈值；如果启动crash >= 该值，则执行深度修复策略：deepRepairBlock。默认：3.
+ 启动crash阈值；如果启动crash >= 该值，则执行深度修复策略：deepRepairBlock。
  */
 @property (nonatomic, assign) NSUInteger thresholdToDeepRepairWhenContinuousCrashOnLaunch;
 
@@ -98,12 +97,3 @@ typedef void(^EVLaunchProtectionLogBlock)(EVLaunchProtectionState state);
 @end
 
 NS_ASSUME_NONNULL_END
-
-```
-
-<video src="http://lxqncdn.miaopai.com/stream/BvmaXK2X49guVi4ehlOjjQ__.mp4" width="544" height="960" controls="controls">
-Your browser does not support the video tag.
-</video>
-
-# 微信公众号 ：汪汪的世界
-![(WeChat)](https://github.com/YongbaoWang/EverShowPath/blob/master/EverShowPath/wechat_num.jpg)

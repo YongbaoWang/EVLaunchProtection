@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-fy-BnP">
+                                <rect key="frame" x="88" y="254" width="199" height="30"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="产生脏数据，浅度策略可修复"/>
+                                <connections>
+                                    <action selector="shallowCanRepair:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXW-Cv-dOZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb3-CH-pBq">
+                                <rect key="frame" x="88" y="302" width="199" height="30"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="产生脏数据，深度策略可修复"/>
+                                <connections>
+                                    <action selector="deepCanRepair:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LV9-Sw-4ux"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmy-Zu-d0S">
+                                <rect key="frame" x="80" y="353" width="215" height="30"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="产生脏数据，热修复策略可修复"/>
+                                <connections>
+                                    <action selector="hotfixCanRepair:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIy-w8-lXR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MSG" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozj-dd-5Fx">
+                                <rect key="frame" x="0.0" y="140" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ozj-dd-5Fx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2QW-rk-1q5"/>
+                            <constraint firstItem="ozj-dd-5Fx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="7cp-oW-d3j"/>
+                            <constraint firstItem="Cmy-Zu-d0S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="Ipc-QZ-sWV"/>
+                            <constraint firstItem="Cmy-Zu-d0S" firstAttribute="top" secondItem="Nb3-CH-pBq" secondAttribute="bottom" constant="21" id="IwP-N5-Ex5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nb3-CH-pBq" secondAttribute="trailing" constant="88" id="M8t-bc-0cv"/>
+                            <constraint firstItem="A8t-fy-BnP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="234" id="OsX-DM-DCI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A8t-fy-BnP" secondAttribute="trailing" constant="88" id="Rmd-Jm-gN6"/>
+                            <constraint firstItem="Nb3-CH-pBq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="VA7-um-YRI"/>
+                            <constraint firstItem="A8t-fy-BnP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="XOU-7J-Mop"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cmy-Zu-d0S" secondAttribute="trailing" constant="80" id="dRW-YI-vMY"/>
+                            <constraint firstItem="Nb3-CH-pBq" firstAttribute="top" secondItem="A8t-fy-BnP" secondAttribute="bottom" constant="18" id="oLz-a1-ZGR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ozj-dd-5Fx" secondAttribute="trailing" id="ydZ-ub-gS2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tipLabel" destination="ozj-dd-5Fx" id="Cjj-ES-sVA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
